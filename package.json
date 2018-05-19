@@ -16,6 +16,9 @@
     "start": "ember serve",
     "test": "ember test"
   },
+  "env": {
+    "GOOGLE_MAPS_API_KEY": "AIzaSyAWRG266t5X6lnkGiL_a0HtnaOYB8L1hIY "
+  },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
@@ -38,6 +41,7 @@
     "ember-load-initializers": "^1.0.0",
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-resolver": "^4.0.0",
+    "ember-simple-google-maps": "^1.0.0",
     "ember-source": "~3.1.0",
     "ember-welcome-page": "^3.0.0",
     "eslint-plugin-ember": "^5.0.0",
