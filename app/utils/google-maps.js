@@ -4,7 +4,7 @@ const google = window.google;
 
 export default EmberObject.extend({
 	init() {
-		this.set('geocoder', new window.google.maps(Geocoder()));
+		this.set('geocoder', new window.google.maps.Geocoder());
 	},
 
 	createMap(element, location) {
@@ -22,7 +22,7 @@ export default EmberObject.extend({
 			if (status === google.maps.GeocoderStatus.OK) {
 				let geometry = result[0].geometry.location;
 				let position = { lat: geometry.lat(), lng: geometry.lng() };
-				maps.setCenter(position);
+				map.setCenter(position);
 				new google.maps.Marker({ position, map, title: location });
 			}
 		});

@@ -16,9 +16,6 @@
     "start": "ember serve",
     "test": "ember test"
   },
-  "env": {
-    "GOOGLE_MAPS_API_KEY": "AIzaSyAWRG266t5X6lnkGiL_a0HtnaOYB8L1hIY "
-  },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
