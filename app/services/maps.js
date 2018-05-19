@@ -5,33 +5,33 @@ import EmberObject from '@ember/object';
 import MapUtil from '../utils/google-maps';
 
 export default Service.extend({
-  init() {
-    this._super(...arguments);
+	init() {
+		this._super(...arguments);
 
-    if (!this.get('cachedMaps'))
-      this.set('cachedMaps', EmberObject.create());
+		if (!this.get('cachedMaps'))
+			this.set('cachedMaps', EmberObject.create());
 
-    if (!this.get('mapUtil'))
-      this.set('mapUtil', MapUtil.create());
-  },
+		if (!this.get('mapUtil'))
+			this.set('mapUtil', MapUtil.create());
+	},
 
-  getMapElement(location) {
-    let camelizedLocation = camelize(location);
-    let element = this.get(`cachedMaps.${ camelizedLocation }`)
+	getMapElement(location) {
+		let camelizedLocation = camelize(location);
+		let element = this.get(`cachedMaps.${ camelizedLocation }`)
 
-    if (!element) {
-      element = this.createMapElement();
-      this.get('mapUtil').createMap(element, location);
-      this.set(`cachedMaps.${ camelizedLocation }`, element );
-    }
+		if (!element) {
+			element = this.createMapElement();
+			this.get('mapUtil').createMap(element, location);
+			this.set(`cachedMaps.${ camelizedLocation }`, element );
+		}
 
-    return element;
-  },
+		return element;
+	},
 
-  createMapElement() {
-  	let element = document.createElement('div');
-  	element.className = 'map';
+	createMapElement() {
+		let element = document.createElement('div');
+		element.className = 'map';
 
-  	return element;
-  }
+		return element;
+	}
 });
